@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Tun'Art - Accueil</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Galerie virtuelle de l'art tunisien">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- AUDIO DE FOND -->
+<audio autoplay loop>
+    <source src="audio/Mozart Symphony No. 40 - DAVID BAY - MOZART 40.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Checkbox invisible pour activer le formulaire -->
+<input type="checkbox" id="loginToggle" style="display:none;">
+
+<header class="header">
+    <div class="logo">Tun<span>Art</span></div>
+    <nav class="nav" aria-label="Menu principal">
+        <a href="index.html" class="active">Accueil</a>
+        <a href="gallery.html">Galerie</a>
+        <a href="evenements.html">Événements</a>
+        <a href="contact.html">Contact</a>
+        <!-- Lien qui “clique” la checkbox -->
+        <label for="loginToggle" class="login-btn">Connexion</label>
+    </nav>
+</header>
+
+<!-- FORMULAIRE LOGIN -->
+<div class="login-box">
+    <label for="loginToggle" class="close-btn">&times;</label>
+    <h2>Connexion</h2>
+    <form>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Mot de passe" required>
+        <button type="submit">Se connecter</button>
+    </form>
+</div>
+
+
+<main class="menu">
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="video/tunisie.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <div class="menu-content">
+        <h1>Bienvenue à <span class="tun">Tun'</span><span class="art">Art</span></h1>
+        <p>Découvrez l'art tunisien et participez à nos événements culturels. Une galerie virtuelle dédiée à la créativité et au patrimoine.</p>
+    </div>
+</main>
+
+<footer class="footer">
+    <!-- Informations de contact à gauche -->
+    <div class="footer-info">
+        <p>Email : <a href="mailto:contact@tunart.tn">contact@tunart.tn</a></p>
+        <p>Téléphone : <a href="tel:+21612345678">+216 12 345 678</a></p>
+    </div>
+
+    <!-- Texte au centre -->
+    <p class="center-text">© 2025 Tun'Art. Tous droits réservés.</p>
+
+    <!-- Réseaux sociaux à droite -->
+    <div class="footer-socials">
+        <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">F</a>
+        <a href="https://www.instagram.com" target="_blank" class="social-icon instagram">I</a>
+        <a href="https://www.youtube.com" target="_blank" class="social-icon youtube">Y</a>
+    </div>
+</footer>
+
+
+
+</body>
+</html>

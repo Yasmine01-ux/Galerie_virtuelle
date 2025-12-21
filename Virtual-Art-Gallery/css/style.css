@@ -1,0 +1,321 @@
+/* =========================
+   RESET GLOBAL
+   ========================= */
+
+/* Supprime les marges/paddings par défaut
+   et applique une police globale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;     /* Inclut padding et border dans width/height */
+    font-family: "Times New Roman", serif;
+}
+
+/* =========================
+   BODY
+   ========================= */
+
+/* Empêche le scroll et fixe la hauteur */
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* =========================
+   SECTION PRINCIPALE (menu)
+   ========================= */
+
+.menu {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+/* =========================
+   VIDEO EN ARRIÈRE-PLAN
+   ========================= */
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* Remplit l’écran sans déformation */
+    z-index: 0;
+}
+
+/* =========================
+   OVERLAY (VOILE SOMBRE)
+   ========================= */
+
+.overlay {
+    position: absolute;
+    inset: 0;                   /* top/right/bottom/left = 0 */
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+/* =========================
+   HEADER (LOGO + NAV)
+   ========================= */
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 10;
+}
+
+/* LOGO */
+.logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #e30e0e;             /* Tun' en rouge */
+}
+
+.logo span {
+    color: #000;                /* Art en noir */
+}
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+.nav a,
+.nav label {
+    margin-right: 25px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Hover et lien actif */
+.nav a:hover,
+.nav a.active,
+.nav label:hover {
+    color: #e30e0e;
+    text-decoration: underline;
+}
+
+/* Bouton Connexion */
+.nav .login-btn {
+    margin-left: auto;          /* Pousse le bouton à droite */
+    background-color: #ff0000;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+/* =========================
+   CONTENU CENTRAL
+   ========================= */
+
+.menu-content {
+    position: relative;
+    z-index: 5;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+    padding: 0 20%;
+}
+
+/* Titre principal */
+.menu-content h1 {
+    font-size: clamp(40px, 8vw, 80px);
+    font-weight: bold;
+}
+
+/* Tun'Art couleurs */
+.tun {
+    color: red;
+    font-weight: bold;
+}
+
+.art {
+    color: black;
+    font-weight: bold;
+}
+
+/* Description */
+.menu-content p {
+    font-size: clamp(16px, 2.5vw, 32px);
+    font-weight: bold;
+}
+
+/* =========================
+   AUDIO BACKGROUND (SAFE)
+   ========================= */
+
+#bg-audio {
+    position: fixed;        /* arrière-plan */
+    bottom: 15px;
+    right: 15px;
+    width: 220px;
+    z-index: 9999;
+    opacity: 0.25;       
+}
+
+/* Devient visible au survol */
+#bg-audio:hover {
+    opacity: 1;
+}
+
+/* =========================
+   LOGIN BOX (FORMULAIRE)
+   ========================= */
+
+.login-box {
+    display: none;              /* Caché par défaut */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    z-index: 20;
+}
+
+/* Titre */
+.login-box h2 {
+    margin-bottom: 15px;
+}
+
+/* Champs input */
+.login-box input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Bouton */
+.login-box button {
+    width: 100%;
+    padding: 10px;
+
+    background: #e30e0e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+/* Hover bouton */
+.login-box button:hover {
+    background: #ff4d4d;
+}
+
+/* Bouton fermer */
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* =========================
+   LOGIQUE CSS (SANS JS)
+   ========================= */
+
+/* Affiche le formulaire si la checkbox est cochée */
+#loginToggle:checked ~ .login-box {
+    display: block;
+}
+
+/* Message succès si formulaire valide */
+.login-box form:valid .success-msg {
+    display: block;
+    color: green;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+.footer {
+    position: fixed;         /* Footer fixé en bas */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.5); /* fond semi-transparent */
+    color: #fff;
+    display: flex;           /* Flexbox pour alignement */
+    justify-content: space-between; /* espace entre les sections */
+    align-items: center;     /* centrage vertical */
+    padding: 15px 50px;
+    font-size: 14px;
+    z-index: 10;             /* devant la vidéo */
+    box-sizing: border-box;
+}
+
+.footer-info p {
+    margin: 2px 0;
+}
+
+.footer-info a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-info a:hover {
+    text-decoration: underline;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;              /* espace entre les icônes */
+}
+
+.footer-socials .social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.footer-socials .social-icon.facebook:hover { background:#1877F2; }
+.footer-socials .social-icon.instagram:hover { background:#E1306C; }
+.footer-socials .social-icon.youtube:hover { background:#FF0000; }
+
+.footer-socials .social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Texte du milieu */
+.footer p.center-text {
+    margin: 0;
+    text-align: center;
+    flex-grow: 1;  /* occupe l’espace central */
+}
