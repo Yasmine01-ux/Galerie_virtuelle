@@ -39,3 +39,63 @@ La **Virtual Art Gallery** de Tun'Art est une plateforme web immersive dédiée 
 
 ## 📁 Structure du projet
 
+VIRTUAL-ART-GALLERY/
+│
+├── audio/
+│   └── Mozart Symphony No. 40 - DAVID BAY....mp3
+│
+├── css/
+│   ├── style.css          (styles globaux du site)
+│   ├── gallery.css        (styles spécifiques à la galerie)
+│   ├── contact.css        (styles de la page contact)
+│   └── evenements.css     (styles de la page événements)
+│
+├── images/
+│   ├── image1.jpg
+│   ├── image2.jpg
+│   ├── image3.jpg
+│   ├── image4.jpg
+│   ├── image5.jpg
+│   ├── image6.jpg
+│   ├── image7.jpg
+│   ├── image8.jpg
+│   ├── image9.jpg
+│   └── image10.jpg
+│
+├── video/
+│   └── tunisie.mp4
+│
+├── index.html             (page d’accueil)
+├── gallery.html           (page galerie d’art)
+├── evenements.html        (page événements)
+├── contact.html           (page contact)
+├── audio.html             (page dédiée à l’audio)
+├── testaudio.html         (page de test pour l’audio)
+├── README.md              (description et instructions du projet)
+
+
+---
+
+## 🎯 Objectifs pédagogiques
+
+- Maîtriser les notions de **HTML, CSS et responsive design**.  
+- Créer une **interface interactive sans JavaScript** avancé.  
+- Travailler sur une **mise en page professionnelle** avec vidéos, audio et galeries.  
+- Organiser un projet collaboratif clair et structuré.
+
+---
+
+## 📌 Instructions pour lancer le projet
+
+1. Cloner ou télécharger le projet.
+2. Ouvrir `index.html` dans votre navigateur préféré.
+3. Naviguer entre les pages via le menu principal.
+4. Profiter de l’expérience immersive de la galerie virtuelle.
+
+---
+
+## 👩‍🎨 Auteur
+
+**Tun'Art Team**  
+Site développé à des fins pédagogiques pour démontrer des compétences en front-end et design interactif.
+
