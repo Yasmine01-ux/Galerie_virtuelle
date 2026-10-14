@@ -1,101 +1,68 @@
-# Virtual Art Gallery - Tun'Art
-Plongez au cœur de la créativité tunisienne avec notre galerie virtuelle. Découvrez des œuvres uniques, explorez le patrimoine artistique et vivez l’art autrement, depuis votre écran.
+# Tun'Art – Galerie d'art virtuelle
 
-## 🌟 Présentation
+Site web dédié à la peinture tunisienne : parcourir les œuvres par thème, les agrandir en plein écran, consulter les événements et réserver sa place.
 
-La **Virtual Art Gallery** de Tun'Art est une plateforme web immersive dédiée à l'art tunisien. Elle permet aux visiteurs de découvrir des œuvres de peintres et artisans tunisiens, de réserver des événements culturels et de contacter les organisateurs, le tout dans une interface moderne et interactive.
+Projet front-end réalisé en **HTML, CSS et JavaScript natif** : aucun framework, aucune installation.
 
----
+![Page d'accueil](docs/screenshots/accueil.jpg)
 
-## 🎨 Fonctionnalités
+## Fonctionnalités
 
-- **Accueil immersif** avec vidéo de fond et audio d’ambiance.
-- **Galerie des artistes tunisiens** :
-  - Galerie scrollable horizontalement.
-  - Description et informations sur chaque œuvre.
-  - Interface responsive pour ordinateurs, tablettes et mobiles.
-- **Événements et réservation** :
-  - Formulaire dynamique (option "Poser une question" ou "Réserver un événement").
-  - Calcul automatique ou choix de tarif.
-  - Sélection du nombre de participants.
-- **Formulaire de contact** :
-  - Nom, prénom, email, message.
-  - Gestion du sexe (homme/femme) lors d’une réservation.
-- **Footer complet** :
-  - Informations de contact à gauche.
-  - Texte central pour droits d’auteur.
-  - Icônes de réseaux sociaux à droite avec hover animés.
+- **Accueil** : vidéo d'ambiance, œuvres à la une, prochains événements.
+- **Galerie** : filtres par thème (Marine, Médina, Portraits, Traditions) et visionneuse plein écran navigable au clavier (← → Échap).
+- **Événements** : liste triée par date, événements passés signalés « Terminé ».
+- **Réservation / Contact** : formulaire qui s'adapte au choix (question ou réservation), événement présélectionné depuis la page Événements, **total calculé automatiquement** (tarif × nombre de personnes).
+- **Musique d'ambiance** : bouton marche/arrêt, état mémorisé d'une page à l'autre.
+- **Responsive** : menu mobile, mise en page fluide du téléphone au grand écran.
 
----
+| Galerie | Réservation | Mobile |
+|---|---|---|
+| ![Galerie](docs/screenshots/galerie.jpg) | ![Réservation](docs/screenshots/reservation.jpg) | ![Mobile](docs/screenshots/mobile-accueil.jpg) |
 
-## 🛠️ Technologies utilisées
+## Points techniques
 
-- HTML5 / CSS3  
-- Flexbox et CSS Grid pour la mise en page.  
-- Vidéo et audio en arrière-plan.  
-- Responsive design (adapté mobile, tablette et desktop).  
+- **Données centralisées** (`js/data.js`) : ajouter une œuvre ou un événement met à jour toutes les pages automatiquement.
+- **Sécurité** : le DOM est construit sans `innerHTML`.
+- **Accessibilité** : lien d'évitement, navigation clavier, focus visible, textes alternatifs, `aria-*`, respect de `prefers-reduced-motion`.
+- **Performance** : images redimensionnées et compressées, vidéo allégée (−70 %), chargement différé des images.
+- **SEO** : balises `title`, `description` et Open Graph sur chaque page.
+- **Maintenance** : une seule feuille de style, un seul script, pas de code dupliqué.
 
----
+## Lancer le projet
 
-## 📁 Structure du projet
+1. Cloner ou télécharger le dépôt.
+2. Ouvrir `index.html` dans un navigateur.
 
-VIRTUAL-ART-GALLERY/
-│
-├── audio/
-│   └── Mozart Symphony No. 40 - DAVID BAY....mp3
-│
-├── css/
-│   ├── style.css          (styles globaux du site)
-│   ├── gallery.css        (styles spécifiques à la galerie)
-│   ├── contact.css        (styles de la page contact)
-│   └── evenements.css     (styles de la page événements)
-│
-├── images/
-│   ├── image1.jpg
-│   ├── image2.jpg
-│   ├── image3.jpg
-│   ├── image4.jpg
-│   ├── image5.jpg
-│   ├── image6.jpg
-│   ├── image7.jpg
-│   ├── image8.jpg
-│   ├── image9.jpg
-│   └── image10.jpg
-│
-├── video/
-│   └── tunisie.mp4
-│
-├── index.html             (page d’accueil)
-├── gallery.html           (page galerie d’art)
-├── evenements.html        (page événements)
-├── contact.html           (page contact)
-├── audio.html             (page dédiée à l’audio)
-├── testaudio.html         (page de test pour l’audio)
-├── README.md              (description et instructions du projet)
+Aucun serveur n'est nécessaire. Pour un serveur local : `python -m http.server`, puis http://localhost:8000.
 
+## Déployer en ligne (GitHub Pages)
 
----
+Dépôt GitHub → **Settings** → **Pages** → Source : branche `main`, dossier `/ (root)` → **Save**.
+Le site est publié à l'adresse `https://<votre-pseudo>.github.io/<nom-du-depot>/`.
 
-## 🎯 Objectifs pédagogiques
+## Structure
 
-- Maîtriser les notions de **HTML, CSS et responsive design**.  
-- Créer une **interface interactive sans JavaScript** avancé.  
-- Travailler sur une **mise en page professionnelle** avec vidéos, audio et galeries.  
-- Organiser un projet collaboratif clair et structuré.
+```
+├── index.html · gallery.html · evenements.html · contact.html · 404.html
+├── css/style.css          Styles de tout le site
+├── js/
+│   ├── data.js            Œuvres et événements (à modifier ici)
+│   └── main.js            Menu, musique, galerie, événements, formulaire
+├── assets/                Images, vidéo, audio, favicon
+└── docs/screenshots/      Captures d'écran du README
+```
 
----
+## Limites connues et pistes d'évolution
 
-## 📌 Instructions pour lancer le projet
+- **Démo front-end** : le formulaire et la connexion sont validés dans le navigateur, mais aucune donnée n'est envoyée. Pour recevoir les messages : [Formspree](https://formspree.io) ou Netlify Forms, sans backend à écrire.
+- Les **événements sont fictifs**.
+- Pistes : version anglaise/arabe, paiement en ligne, espace administrateur pour gérer les œuvres.
 
-1. Cloner ou télécharger le projet.
-2. Ouvrir `index.html` dans votre navigateur préféré.
-3. Naviguer entre les pages via le menu principal.
-4. Profiter de l’expérience immersive de la galerie virtuelle.
+## Crédits et droits
 
----
+Le code est sous licence MIT (voir `LICENSE`).
+Les peintures, la vidéo et l'enregistrement musical (Symphonie n° 40 de Mozart, interprétation de David Bay) appartiennent à leurs auteurs et sont utilisés ici à titre pédagogique. Pour une diffusion publique, remplacez-les par des contenus libres de droits ou autorisés.
 
-## 👩‍🎨 Auteur
+## Auteur
 
-**Tun'Art Team**  
-Site développé à des fins pédagogiques pour démontrer des compétences en front-end et design interactif.
-
+**Tun'Art Team** – projet réalisé pour démontrer des compétences en développement front-end et en design d'interface.

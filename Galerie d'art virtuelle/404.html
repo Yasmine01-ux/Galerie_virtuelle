@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page introuvable – Tun'Art</title>
+<meta name="description" content="Cette page n'existe pas.">
+<meta name="theme-color" content="#e30e0e">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Page introuvable – Tun'Art">
+<meta property="og:description" content="Cette page n'existe pas.">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="404">
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<video class="bg-video" autoplay muted loop playsinline preload="metadata" poster="assets/video/poster.jpg" aria-hidden="true">
+  <source src="assets/video/tunisie.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+
+<header class="header">
+  <div class="container header__inner">
+    <a class="logo" href="index.html" aria-label="Tun'Art – accueil">Tun<span>Art</span></a>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+    <nav class="nav" id="nav" aria-label="Menu principal">
+        <a href="index.html">Accueil</a>
+        <a href="gallery.html">Galerie</a>
+        <a href="evenements.html">Événements</a>
+        <a href="contact.html">Contact</a>
+        <button class="login-btn" type="button">Connexion</button>
+    </nav>
+    <button class="music-btn" id="musicBtn" type="button" aria-pressed="false"></button>
+  </div>
+</header>
+
+<main id="main" class="page">
+  <div class="container notfound">
+    <div>
+      <h1>404</h1>
+      <p class="page-lead">Cette page est introuvable. Elle a peut-être été déplacée.</p>
+      <p class="more"><a class="btn" href="index.html">Retour à l'accueil</a></p>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>
+      <p>Email : <a href="mailto:contact@tunart.tn">contact@tunart.tn</a></p>
+      <p>Téléphone : <a href="tel:+21612345678">+216 12 345 678</a></p>
+    </div>
+    <p class="footer__copy">© 2026 Tun'Art. Tous droits réservés.</p>
+    <div class="socials">
+      <a class="facebook" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h-2.5A4.5 4.5 0 0 0 8 7.5V10H5.5v3H8v8h3.5v-8H14l.5-3h-3V7.5c0-.6.4-1 1-1H15z"/></svg></a>
+      <a class="instagram" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></a>
+      <a class="youtube" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

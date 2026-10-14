@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact et réservation – Tun'Art</title>
+<meta name="description" content="Posez une question ou réservez un événement Tun'Art : formulaire simple avec calcul automatique du tarif.">
+<meta name="theme-color" content="#e30e0e">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact et réservation – Tun'Art">
+<meta property="og:description" content="Posez une question ou réservez un événement Tun'Art : formulaire simple avec calcul automatique du tarif.">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contact">
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<video class="bg-video" autoplay muted loop playsinline preload="metadata" poster="assets/video/poster.jpg" aria-hidden="true">
+  <source src="assets/video/tunisie.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+
+<header class="header">
+  <div class="container header__inner">
+    <a class="logo" href="index.html" aria-label="Tun'Art – accueil">Tun<span>Art</span></a>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+    <nav class="nav" id="nav" aria-label="Menu principal">
+        <a href="index.html">Accueil</a>
+        <a href="gallery.html">Galerie</a>
+        <a href="evenements.html">Événements</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <button class="login-btn" type="button">Connexion</button>
+    </nav>
+    <button class="music-btn" id="musicBtn" type="button" aria-pressed="false"></button>
+  </div>
+</header>
+
+<main id="main" class="page">
+  <div class="container">
+    <div class="panel form-box">
+      <h1 class="page-title">Réservation / Contact</h1>
+      <p class="page-lead">Posez-nous une question ou réservez un événement.</p>
+
+      <form class="form" id="contactForm" novalidate>
+        <fieldset>
+          <legend>Je souhaite :</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="type" value="question" checked><span>Poser une question</span></label>
+            <label class="choice"><input type="radio" name="type" value="reservation" id="reservation-radio"><span>Réserver un événement</span></label>
+          </div>
+        </fieldset>
+
+        <div class="row">
+          <div><label class="lbl" for="nom">Nom</label><input type="text" id="nom" name="nom" autocomplete="family-name" required></div>
+          <div><label class="lbl" for="prenom">Prénom</label><input type="text" id="prenom" name="prenom" autocomplete="given-name" required></div>
+        </div>
+        <div><label class="lbl" for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required></div>
+        <div><label class="lbl" for="message">Message</label><textarea id="message" name="message" rows="4"></textarea></div>
+
+        <div class="reservation" id="reservation" hidden>
+          <div><label class="lbl" for="evenement">Événement</label>
+            <select id="evenement" name="evenement"><option value="">– Sélectionner un événement –</option></select></div>
+          <div class="row">
+            <div><label class="lbl" for="personnes">Nombre de personnes</label><input type="number" id="personnes" name="personnes" min="1" max="20" value="1"></div>
+            <div><label class="lbl" for="total">Total</label><input type="text" id="total" name="total" value="–" readonly aria-live="polite"></div>
+          </div>
+        </div>
+
+        <button class="btn" type="submit">Envoyer</button>
+      </form>
+
+      <div class="success" id="success" tabindex="-1" hidden>
+        <h2>Merci !</h2>
+        <p id="successText"></p>
+        <button class="btn btn--ghost" type="button" id="again">Envoyer un autre message</button>
+      </div>
+
+      <p class="notice">Version de démonstration : le formulaire est validé dans le navigateur, mais aucune donnée n'est envoyée ni stockée.</p>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>
+      <p>Email : <a href="mailto:contact@tunart.tn">contact@tunart.tn</a></p>
+      <p>Téléphone : <a href="tel:+21612345678">+216 12 345 678</a></p>
+    </div>
+    <p class="footer__copy">© 2026 Tun'Art. Tous droits réservés.</p>
+    <div class="socials">
+      <a class="facebook" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h-2.5A4.5 4.5 0 0 0 8 7.5V10H5.5v3H8v8h3.5v-8H14l.5-3h-3V7.5c0-.6.4-1 1-1H15z"/></svg></a>
+      <a class="instagram" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></a>
+      <a class="youtube" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
