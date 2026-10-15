@@ -44,7 +44,7 @@ Développé en **HTML5, CSS3 et JavaScript natif**, le projet privilégie une in
 ## Aperçu de l'interface
 
 <p align="center">
-  <img src="docs/screenshots/galerie.jpg" alt="Galerie interactive et filtres par thème" width="700">
+  <img src="Virtual_art_gallery/docs/screenshots/galerie.jpg" alt="Galerie interactive et filtres par thème" width="700">
 </p>
 
 <p align="center">
